@@ -1,0 +1,33 @@
+Basics Details
+    -> Most used class in java programs.
+    -> String are immutable and get stored in string pool withing heap area.
+    -> String pool make sure that each string should not be duplicated.
+        so a= "hello" and b="hello" then string pool have only one entry while a and b have the same reference.
+
+        We can create new string with same name by using new key word as below.
+            String a = new String ("hello");
+        in this case it will be stored in heap memory not in string pool.
+
+    -> String Pool created for optimisation purpose and also due to security reasons.
+
+String Comparison-:
+    ->  == operator for string generally checks for the reference and values both. It works only if both of the variables
+        pointing out the string from string pool only.
+    -> In case of string pool and heap memory mixed data set, we should always use equals method as == will give false
+        reference will be different.
+        Eg.
+            String str = "abc";
+            String str1 = new String("abc");
+            if(str.equals(str1)) -> true
+            if(str == str1) -> false
+
+String Concatenation-:
+    -> For string concatenation there should be atleast one object of type String other wise java will give the error.
+        Eg.    111 + new ArrayList(); -> Wrong
+               111 + "" + new ArrayList(); -> Correct.
+
+String optimisation -:
+    -> Use StringBuilder (not thread safe) / StringBuffer (thread safe) to reduce the unnecessary object creation in string pool.
+
+String pre-defined methods -:
+    -> Too many please check via IDE
